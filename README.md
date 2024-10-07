@@ -1,4 +1,5 @@
 # Solana-Radar-Hackathon
+## Rust-Smart-Contract deployed on Solana Blockchain (Devnet)
 
 ### *EduBukSealer: A Solana Program for Certificate Management*
 
