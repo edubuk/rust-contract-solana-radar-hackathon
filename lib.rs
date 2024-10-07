@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 
-declare_id!("38ejPywtc7T3jCx5p4xdw858SUyoAZhW3qfw4kig8mxk");
+declare_id!("D4CGgU6uJXFrNbf87TedbMPaXzBEK3jQmMJ5SFu12soe");
 
 #[program]
 pub mod certificate_verification {
@@ -157,8 +157,6 @@ pub fn post_certificate(
 
  Ok(())
  }
-
- // This function is used to register multiple holder at once
  pub fn bulk_upload(
  ctx: Context<BulkUpload>,
  data: Vec<BulkUploadData>,
@@ -311,14 +309,11 @@ pub struct PostCertificate<'info> {
 // Get institute details
 #[derive(Accounts)]
 pub struct GetInstituteDetails<'info> {
-    #[account(
-        seeds = [b"institute", &institute.key().to_bytes()],
-        bump
-    )]
-    pub institute: Account<'info, InstituteAccount>,
-    pub institute_signer: Signer<'info>,
+ pub state: Account<'info, State>,
+ pub institute: Signer<'info>, // Institute's signature required
+ #[account(mut)]
+ pub admin: Signer<'info>, // Admin can also fetch details
 }
-
 
 // Get student details
 #[derive(Accounts)]
