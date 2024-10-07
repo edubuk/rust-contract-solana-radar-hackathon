@@ -1,4 +1,4 @@
-# Solana-Radar-Hackathon
+# Solana-Radar-Hackathon (Sept. - Oct. 2024)
 ## Rust-Smart-Contract deployed on Solana Blockchain (Devnet)
 
 ### *EduBukSealer: A Solana Program for Certificate Management*
