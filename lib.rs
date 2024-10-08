@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 
-declare_id!("D4CGgU6uJXFrNbf87TedbMPaXzBEK3jQmMJ5SFu12soe");
+declare_id!("HH18xCQFFpoMscFJdTQEoRHqpmnUbb2Jxnr2BWbBqhCD");
 
 #[program]
 pub mod certificate_verification {
@@ -283,7 +283,7 @@ pub struct Student {
 // Initialize contract
 #[derive(Accounts)]
 pub struct Initialize<'info> {
- #[account(init, payer = admin, space = 8 + 32 + (100 * 32))]
+ #[account(init, payer = admin, space = 8 + 32 + (100 * 64))]
  pub state: Account<'info, State>,
  #[account(mut)]
  pub admin: Signer<'info>,
